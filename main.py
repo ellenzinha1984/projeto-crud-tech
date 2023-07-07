@@ -18,7 +18,7 @@ class Dog(BaseModel):
 
 app = FastAPI()
 
-origins = ["http://127.0.0.1:5500", "https://crud-pets-desafio-tech-site.onrender.com/"]
+origins = ["http://127.0.0.1:5500", "https://crud-pets-desafio-tech-site.onrender.com/pets/todos"]
 
 app.add_middleware(
     CORSMiddleware,
