@@ -1,7 +1,7 @@
 function loadTable() {
     const xhttp = new XMLHttpRequest();
     xhttp.withCredentials = true;
-    xhttp.open("GET", "http://127.0.0.1:8000/pets/todos");
+    xhttp.open("GET", "https://crud-pets-desafio-tech.onrender.com/pets/todos");
     xhttp.send();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
