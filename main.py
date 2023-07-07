@@ -3,6 +3,7 @@ import pymongo, json
 from bson import json_util
 from bson import ObjectId
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 client = pymongo.MongoClient("mongodb+srv://renatobessa:carcrud123@carcrud.smxhds1.mongodb.net/")
 db = client["Doguinhos"]
@@ -16,6 +17,16 @@ class Dog(BaseModel):
     tutor: str
 
 app = FastAPI()
+
+origins = ["http://127.0.0.1:5500", "https://crud-pets-desafio-tech-site.onrender.com/"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/pets/")
 async def cadastra_pets(dog: Dog):
