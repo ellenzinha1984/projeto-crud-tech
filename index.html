@@ -16,7 +16,7 @@
     
     <nav class="navbar navbar-dark bg-mynav">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Cadastro de Pets</a>
+        <a class="navbar-brand" href="#">.: Cadastro de Pets :.</a>
       </div>
     </nav>
 
@@ -24,7 +24,7 @@
       <div class="d-flex bd-highlight mb-3">
         <div class="me-auto p-2 bd-highlight"><h2>Pets</div>
         <div class="p-2 bd-highlight">
-          <button type="button" class="btn btn-secondary" onclick="showUserCreateBox()">Cadastrar</button>
+          <button type="button" class="btn btn-secondary" onclick="cadastrarPet()">Cadastrar</button>
         </div>
       </div>
 
@@ -47,6 +47,53 @@
           </tbody>
         </table>
       </div>
+    </div>
+    <div>
+      <!-- Label para busca de pet especifico -->
+      <label for="searchIdd">ID do Pet:</label>
+      <input type="text" id="searchIdd" name="searchId">
+      <button id="searchButton" onclick="buscaPet()">Buscar</button>
+    </div>
+    <div id="petInfo"></div>
+    <div>
+      <button onclick="limparBusca()">Limpar</button>
+    </div>
+    <div>
+      <!-- Form com os dados para edicao -->
+        <form id="editForm" style="display: none;">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome"><br><br>
+            <label for="especie">Espécie:</label>
+            <input type="text" id="especie" name="especie"><br><br>
+            <label for="raca">Raça:</label>
+            <input type="text" id="raca" name="raca"><br><br>
+            <label for="cor">Cor:</label>
+            <input type="text" id="cor" name="cor"><br><br>
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade"><br><br>
+            <label for="tutor">Tutor:</label>
+            <input type="text" id="tutor" name="tutor"><br><br>
+            <button type="button" class="btn btn-secondary" onclick="submitEditedPet()">Enviar</button>
+        </form>
+    </div>
+    <div>
+      <!-- Form com os dados para inclusao -->
+      <form id="createForm" style="display: none;">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome1" name="nome"><br><br>
+        <label for="especie">Espécie:</label>
+        <input type="text" id="especie1" name="especie"><br><br>
+        <label for="raca">Raça:</label>
+        <input type="text" id="raca1" name="raca"><br><br>
+        <label for="cor">Cor:</label>
+        <input type="text" id="cor1" name="cor"><br><br>
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade1" name="idade"><br><br>
+        <label for="tutor">Tutor:</label>
+        <input type="text" id="tutor1" name="tutor"><br><br>
+        <button type="button" class="btn btn-secondary" onclick="submitNewPet()">Enviar</button>
+    </form>
+    
     </div>
     <script src="assets/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
